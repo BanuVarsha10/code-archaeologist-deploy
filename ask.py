@@ -166,7 +166,13 @@ def answer_question(query, conn, repo_key, model='llama3.2:3b', top_k=5):
     ], model=model)
 
     cited_hashes = set(re.findall(r'\b[0-9a-f]{6,8}\b', raw_answer))
-    hallucinated_hashes = cited_hashes - all_valid_hashes
+    hallucinated_hashes = set()
+    for h in cited_hashes:
+        if h in all_valid_hashes:
+            continue
+        if h.zfill(8) in all_valid_hashes:
+            continue  # malformed-but-real: dropped leading zero, same fix cli.py already has
+        hallucinated_hashes.add(h)
 
     cited_issues = set(int(n) for n in re.findall(r'#(\d+)', raw_answer))
     hallucinated_issues = cited_issues - all_valid_issues

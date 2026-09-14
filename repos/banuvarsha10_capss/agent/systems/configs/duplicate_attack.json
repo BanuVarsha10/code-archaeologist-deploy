@@ -1,0 +1,6 @@
+{
+    "experiment_name": "duplicate_attack",
+    "ue_count": 1,
+    "duration": 30,
+    "startup_delay": 5
+}

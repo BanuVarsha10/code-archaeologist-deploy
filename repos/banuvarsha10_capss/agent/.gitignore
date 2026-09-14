@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Local experiment/test artifacts - never commit real or fake experience data
+experience_store.json
+*_exp.json
+*_experience*.json
+edge_check.json
+s43_verify.json
+result.json
+
+# Local venv, if used
+venv/
+.venv/
+
+# LLM explainer credential - never commit
+dashboard_backend/.env.local

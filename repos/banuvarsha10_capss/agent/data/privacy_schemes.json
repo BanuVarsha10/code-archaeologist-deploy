@@ -1,0 +1,2234 @@
+[
+  {
+    "id": "SCHEME-001",
+    "name": "Elliptic Curve Integrated Encryption Scheme",
+    "short_name": "ECIES",
+    "version": "1.0",
+    "description": "Elliptic Curve Integrated Encryption Scheme (ECIES) is a hybrid public-key encryption scheme that combines Elliptic Curve Diffie-Hellman (ECDH), a Key Derivation Function (KDF), symmetric encryption, and message authentication to securely encrypt subscriber identities. In 5G, ECIES is used as the basis for SUCI generation, allowing the UE to conceal the permanent SUPI before transmitting it over the air. It provides strong confidentiality with relatively low computational overhead while remaining compatible with existing 5G security architecture.",
+    "category": "Identity Protection",
+    "primary_privacy_goal": "Identity Protection",
+    "secondary_goals": [
+      "Subscriber Identity Confidentiality",
+      "Secure Key Establishment",
+      "Confidential Authentication Support"
+    ],
+    "cryptographic_characteristics": {
+      "cryptographic_type": "Hybrid Public Key Encryption",
+      "algorithm_family": "Elliptic Curve Cryptography",
+      "key_exchange": "ECDH",
+      "symmetric_encryption": "AES",
+      "authentication": "MAC",
+      "key_derivation": "KDF",
+      "requires_pki": true,
+      "requires_group_manager": false,
+      "requires_trusted_authority": true,
+      "supports_forward_secrecy": true,
+      "supports_backward_secrecy": false,
+      "quantum_resistant": false
+    },
+    "security_metrics": {
+      "privacy_strength": "High",
+      "security_strength": "High",
+      "identity_protection": "Very High",
+      "tracking_protection": "Medium",
+      "anonymous_authentication": false,
+      "confidentiality": "Very High",
+      "integrity": "High",
+      "authentication_strength": "High",
+      "non_repudiation": "Low",
+      "unlinkability": "Medium",
+      "untraceability": "Medium",
+      "anonymity_level": "High"
+    },
+    "performance": {
+      "latency": "Low",
+      "computation_cost": "Low",
+      "communication_overhead": "Low",
+      "storage_requirement": "Low",
+      "energy_consumption": "Low",
+      "bandwidth_requirement": "Low",
+      "memory_requirement": "Low",
+      "processing_complexity": "Moderate"
+    },
+    "deployment": {
+      "scalability": "High",
+      "maturity": "Standardized",
+      "deployment_status": "Widely Deployed",
+      "implementation_complexity": "Medium",
+      "production_ready": true,
+      "3gpp_support": true,
+      "nist_support": true
+    },
+    "requirements": {
+      "requires_public_key": true,
+      "requires_private_key_generator": false,
+      "requires_group_manager": false,
+      "requires_secure_channel": true,
+      "requires_identity_server": false,
+      "requires_certificate_authority": true,
+      "requires_pairing_library": false
+    },
+    "threat_model": {
+      "protects_against": [
+        "Identity Disclosure",
+        "Passive Eavesdropping",
+        "Man-in-the-Middle Attacks",
+        "Confidentiality Breaches"
+      ],
+      "partially_protects_against": [
+        "Subscriber Tracking"
+      ],
+      "does_not_protect_against": [
+        "Traffic Analysis",
+        "Replay Attacks",
+        "Denial of Service",
+        "Side-Channel Attacks",
+        "Quantum Attacks"
+      ]
+    },
+    "decision_support": {
+      "decision_tags": [
+        "identity_protection",
+        "5g_standard",
+        "efficient",
+        "low_latency",
+        "subscriber_privacy",
+        "production_ready"
+      ],
+      "context_preferences": {
+        "high_privacy": "Medium",
+        "high_security": true,
+        "low_latency": true,
+        "resource_constrained": true,
+        "quantum_safe": false,
+        "tracking_risk": false,
+        "anonymous_authentication_required": false,
+        "identity_protection_required": true,
+        "high_scalability": true
+      },
+      "optimization_targets": [
+        "Maximize Identity Protection",
+        "Maximize Confidentiality",
+        "Strong Public-Key Encryption",
+        "Secure Key Exchange"
+      ],
+      "primary_role": "Low-overhead standardized identity protection",
+      "recommendation_profile": {
+        "threat_level": "LOW",
+        "privacy_level": "MEDIUM",
+        "latency_level": "LOW",
+        "tracking_level": "LOW",
+        "metadata_level": "LOW",
+        "capabilities": [
+          "identity_protection",
+          "subscriber_identity_confidentiality",
+          "confidentiality",
+          "secure_key_exchange",
+          "authentication_hardening",
+          "low_latency",
+          "lightweight_crypto",
+          "low_computational_overhead",
+          "standardized_5g",
+          "production_ready",
+          "classical_cryptography"
+        ],
+        "best_when": [
+          "Strong confidentiality is required",
+          "Public Key Infrastructure (PKI) is available",
+          "Identity protection is a high priority",
+          "Secure key exchange is required",
+          "Standard 5G registration",
+          "Production deployment",
+          "Resource-constrained UE"
+        ],
+        "avoid_when": [
+          "Quantum-resistant security is required",
+          "Certificate management infrastructure is unavailable",
+          "Ultra-low computational overhead is required",
+          "Pure anonymity rather than encryption is the primary objective",
+          "High tracking risk",
+          "Traffic analysis attacks",
+          "Correlation attacks",
+          "Metadata privacy is the primary objective"
+        ],
+        "reasoning_profile": {
+          "high_threat": false,
+          "high_privacy_required": false,
+          "high_metadata_leakage": false,
+          "high_tracking_risk": false,
+          "high_correlation_risk": false,
+          "low_latency_required": true,
+          "low_signal_environment": true,
+          "registration_success": true,
+          "authentication_success": true,
+          "attack_detected": false,
+          "attack_type_affinity": {
+            "duplicate_registration": false,
+            "flooding": false,
+            "invalid_subscriber": false,
+            "replay": false
+          }
+        }
+      },
+      "selection_triggers": [
+        "High Confidentiality Requirement",
+        "Identity Privacy Required",
+        "Public Key Infrastructure Available",
+        "Secure Key Exchange Needed",
+        "Classical Cryptography Preferred"
+      ]
+    },
+    "suitability": {
+      "suitable_conditions": [
+        "Standard 5G registration",
+        "Subscriber identity protection",
+        "Large-scale deployments",
+        "Low-latency networks",
+        "Resource-constrained UEs"
+      ],
+      "unsuitable_conditions": [
+        "Quantum-threat environments",
+        "Anonymous authentication requirements",
+        "Long-term post-quantum deployments"
+      ],
+      "recommended_for": [
+        "Commercial 5G Networks",
+        "Private 5G",
+        "Mobile Operators",
+        "Edge Deployments"
+      ],
+      "not_recommended_for": [
+        "Post-Quantum Networks",
+        "Military quantum-safe infrastructure"
+      ]
+    },
+    "resource_suitability": {
+      "iot": "High",
+      "mobile": "Very High",
+      "edge": "High",
+      "cloud": "High",
+      "private_5g": "Very High",
+      "public_5g": "Very High"
+    },
+    "constraints": {
+      "minimum_cpu": "Medium",
+      "minimum_memory": "Medium",
+      "supports_low_power_devices": true,
+      "supports_massive_iot": true,
+      "supports_real_time": true
+    },
+    "hybrid_support": {
+      "compatible_with": [
+        "Adaptive Padding",
+        "Dynamic Pseudonyms"
+      ],
+      "incompatible_with": [],
+      "recommended_combinations": [
+        "ECIES + Adaptive Padding",
+        "ECIES + Dynamic Pseudonyms"
+      ],
+      "combination_reason": [
+        "Adaptive Padding improves resistance against traffic analysis.",
+        "Dynamic Pseudonyms reduce long-term subscriber tracking."
+      ]
+    },
+    "use_cases": [
+      "5G SUCI generation",
+      "Subscriber identity protection",
+      "Commercial cellular authentication",
+      "Private enterprise networks",
+      "Secure public-key encryption"
+    ],
+    "real_world_examples": [
+      "3GPP Release 15 5G Authentication",
+      "Open5GS",
+      "Commercial 5G Core Networks"
+    ],
+    "advantages": [
+      "Standardized in 3GPP",
+      "Widely deployed",
+      "Efficient on mobile devices",
+      "Strong confidentiality",
+      "Low computational overhead",
+      "Scalable",
+      "Well-studied cryptographic security"
+    ],
+    "limitations": [
+      "Not quantum resistant",
+      "Requires PKI infrastructure",
+      "Does not inherently prevent long-term tracking",
+      "No anonymous authentication",
+      "Dependent on ECC security assumptions"
+    ],
+    "reasoning_support": {
+      "selection_reason_template": "Recommended because it provides standardized and efficient subscriber identity protection with low latency and strong confidentiality.",
+      "avoid_reason_template": "Avoid when post-quantum protection or anonymous authentication is required.",
+      "decision_examples": [
+        "Standard commercial 5G deployment",
+        "Large mobile operator network",
+        "Low-latency enterprise deployment"
+      ],
+      "explanation_template": "ECIES protects the subscriber identity by encrypting the permanent identifier before transmission while maintaining low computational overhead."
+    },
+    "quantitative_metrics": {
+      "privacy_score": 4,
+      "security_score": 5,
+      "latency_score": 5,
+      "energy_score": 5,
+      "tracking_score": 2,
+      "identity_score": 5,
+      "scalability_score": 5,
+      "deployment_score": 5,
+      "quantum_score": 1
+    },
+    "evidence": {
+      "standardized": true,
+      "research_validated": true,
+      "deployment_evidence": "High",
+      "production_adoption": "High",
+      "technology_readiness_level": 9,
+      "primary_reference": "3GPP TS 33.501"
+    },
+    "references": [
+      {
+        "title": "3GPP TS 33.501 Security Architecture and Procedures for 5G System",
+        "type": "3GPP Specification",
+        "identifier": "TS 33.501",
+        "year": "Latest Release"
+      },
+      {
+        "title": "SEC 1: Elliptic Curve Cryptography",
+        "type": "Standard",
+        "identifier": "SECG SEC 1",
+        "year": "2009"
+      },
+      {
+        "title": "IEEE Std 1363a",
+        "type": "IEEE Standard",
+        "identifier": "ECIES",
+        "year": "2004"
+      },
+      {
+        "title": "NIST SP 1800-33",
+        "type": "NIST Practice Guide",
+        "identifier": "1800-33",
+        "year": "2024"
+      }
+    ]
+  },
+  {
+    "id": "SCHEME-002",
+    "name": "Module-Lattice Key Encapsulation Mechanism",
+    "short_name": "ML-KEM",
+    "version": "1.0",
+    "description": "Module-Lattice Key Encapsulation Mechanism (ML-KEM), formerly known as CRYSTALS-Kyber, is a post-quantum cryptographic key encapsulation mechanism standardized by NIST. It enables two parties to securely establish a shared secret while remaining resistant to attacks from both classical and quantum computers. Within CAPSS, ML-KEM can serve as a quantum-safe alternative to ECIES for protecting subscriber identities and establishing secure communication.",
+    "category": "Post-Quantum Identity Protection",
+    "primary_privacy_goal": "Quantum-Resistant Identity Protection",
+    "secondary_goals": [
+      "Post-Quantum Key Exchange",
+      "Subscriber Identity Confidentiality",
+      "Future-Proof Authentication"
+    ],
+    "cryptographic_characteristics": {
+      "cryptographic_type": "Post-Quantum Key Encapsulation Mechanism",
+      "algorithm_family": "Module Learning With Errors (MLWE)",
+      "key_exchange": "ML-KEM",
+      "symmetric_encryption": "AES",
+      "authentication": "MAC",
+      "key_derivation": "KDF",
+      "requires_pki": true,
+      "requires_group_manager": false,
+      "requires_trusted_authority": true,
+      "supports_forward_secrecy": true,
+      "supports_backward_secrecy": false,
+      "quantum_resistant": true
+    },
+    "security_metrics": {
+      "privacy_strength": "Very High",
+      "security_strength": "Very High",
+      "identity_protection": "Very High",
+      "tracking_protection": "Medium",
+      "anonymous_authentication": false,
+      "confidentiality": "Very High",
+      "integrity": "High",
+      "authentication_strength": "High",
+      "non_repudiation": "Low",
+      "unlinkability": "Medium",
+      "untraceability": "Medium",
+      "anonymity_level": "High"
+    },
+    "performance": {
+      "latency": "Medium",
+      "computation_cost": "Medium",
+      "communication_overhead": "High",
+      "storage_requirement": "Medium",
+      "energy_consumption": "Medium",
+      "bandwidth_requirement": "High",
+      "memory_requirement": "Medium",
+      "processing_complexity": "High"
+    },
+    "deployment": {
+      "scalability": "High",
+      "maturity": "Standardized",
+      "deployment_status": "Emerging",
+      "implementation_complexity": "High",
+      "production_ready": true,
+      "3gpp_support": false,
+      "nist_support": true
+    },
+    "requirements": {
+      "requires_public_key": true,
+      "requires_private_key_generator": false,
+      "requires_group_manager": false,
+      "requires_secure_channel": true,
+      "requires_identity_server": false,
+      "requires_certificate_authority": true,
+      "requires_pairing_library": false
+    },
+    "threat_model": {
+      "protects_against": [
+        "Identity Disclosure",
+        "Passive Eavesdropping",
+        "Quantum Attacks",
+        "Confidentiality Breaches",
+        "Man-in-the-Middle Attacks"
+      ],
+      "partially_protects_against": [
+        "Subscriber Tracking"
+      ],
+      "does_not_protect_against": [
+        "Traffic Analysis",
+        "Replay Attacks",
+        "Denial of Service",
+        "Side-Channel Attacks"
+      ]
+    },
+    "decision_support": {
+      "decision_tags": [
+        "quantum_safe",
+        "future_proof",
+        "high_security",
+        "identity_protection",
+        "post_quantum",
+        "nist_standard"
+      ],
+      "context_preferences": {
+        "high_privacy": true,
+        "high_security": true,
+        "low_latency": false,
+        "resource_constrained": false,
+        "quantum_safe": true,
+        "tracking_risk": false,
+        "anonymous_authentication_required": false,
+        "identity_protection_required": true,
+        "high_scalability": true
+      },
+      "optimization_targets": [
+        "Provide Quantum Resistance",
+        "Maximize Identity Protection",
+        "Maximize Confidentiality",
+        "Future-Proof Cryptography"
+      ],
+      "primary_role": {
+        "title": "Post-quantum identity protection",
+        "description": "Primary mechanism for high-threat environments requiring quantum-resistant identity protection and long-term confidentiality."
+      },
+      "recommendation_profile": {
+        "threat_level": "HIGH",
+        "privacy_level": "HIGH",
+        "latency_level": "MEDIUM",
+        "tracking_level": "LOW",
+        "metadata_level": "LOW",
+        "capabilities": [
+          "post_quantum_security",
+          "identity_protection",
+          "secure_key_exchange",
+          "authentication_hardening",
+          "high_security",
+          "future_proof",
+          "standardized_crypto",
+          "quantum_resistance",
+          "critical_infrastructure"
+        ],
+        "best_when": [
+          "Quantum-resistant security is required",
+          "Future-proof deployment is planned",
+          "Long-term confidentiality is critical",
+          "Modern cryptographic infrastructure is available",
+          "High threat environment",
+          "Government deployment",
+          "Critical infrastructure",
+          "Military communication"
+        ],
+        "avoid_when": [
+          "Legacy cryptographic compatibility is required",
+          "Very constrained IoT devices are used",
+          "Ultra-low latency is mandatory",
+          "Minimal computational overhead is required",
+          "Battery constrained UE",
+          "Bandwidth constrained network",
+          "Standard commercial deployment with no quantum threat"
+        ],
+        "reasoning_profile": {
+          "high_threat": true,
+          "high_privacy_required": true,
+          "high_metadata_leakage": false,
+          "high_tracking_risk": false,
+          "high_correlation_risk": false,
+          "low_latency_required": false,
+          "low_signal_environment": false,
+          "registration_success": true,
+          "authentication_success": true,
+          "attack_detected": true,
+          "attack_type_affinity": {
+            "duplicate_registration": false,
+            "flooding": false,
+            "invalid_subscriber": false,
+            "replay": true
+          }
+        }
+      },
+      "selection_triggers": [
+        "Quantum Threat Detected",
+        "Future-Proof Security Required",
+        "High Confidentiality Requirement",
+        "Post-Quantum Migration",
+        "Critical Infrastructure",
+        "Active attack detected",
+        "Post-quantum migration",
+        "Long-term data protection"
+      ]
+    },
+    "suitability": {
+      "suitable_conditions": [
+        "Quantum-safe deployments",
+        "Government communication",
+        "Critical infrastructure",
+        "Long-term confidential data",
+        "Future 6G networks"
+      ],
+      "unsuitable_conditions": [
+        "Ultra-low latency applications",
+        "Highly resource-constrained IoT devices",
+        "Legacy-only environments"
+      ],
+      "recommended_for": [
+        "Defense networks",
+        "Government 5G",
+        "Private enterprise networks",
+        "Critical infrastructure"
+      ],
+      "not_recommended_for": [
+        "Battery-constrained sensors",
+        "Legacy devices lacking PQC support"
+      ]
+    },
+    "resource_suitability": {
+      "iot": "Low",
+      "mobile": "Medium",
+      "edge": "High",
+      "cloud": "Very High",
+      "private_5g": "Very High",
+      "public_5g": "High"
+    },
+    "constraints": {
+      "minimum_cpu": "High",
+      "minimum_memory": "Medium",
+      "supports_low_power_devices": false,
+      "supports_massive_iot": false,
+      "supports_real_time": false
+    },
+    "hybrid_support": {
+      "compatible_with": [
+        "Adaptive Padding",
+        "Dynamic Pseudonyms",
+        "Zero-Knowledge Proofs"
+      ],
+      "incompatible_with": [],
+      "recommended_combinations": [
+        "ML-KEM + Adaptive Padding",
+        "ML-KEM + Dynamic Pseudonyms",
+        "ML-KEM + Zero-Knowledge Proofs"
+      ],
+      "combination_reason": [
+        "Adaptive Padding mitigates traffic analysis.",
+        "Dynamic Pseudonyms reduce subscriber tracking.",
+        "Zero-Knowledge Proofs strengthen privacy-preserving authentication."
+      ]
+    },
+    "use_cases": [
+      "Post-Quantum 5G Authentication",
+      "Future 6G Networks",
+      "Government Infrastructure",
+      "Military Communications",
+      "Critical Infrastructure Protection"
+    ],
+    "real_world_examples": [
+      "NIST PQC Standardization",
+      "Cloudflare PQC Experiments",
+      "Google Post-Quantum TLS Trials"
+    ],
+    "advantages": [
+      "Quantum resistant",
+      "NIST standardized",
+      "Strong long-term security",
+      "Suitable for future communication systems",
+      "High cryptographic confidence",
+      "Forward secrecy support"
+    ],
+    "limitations": [
+      "Larger public keys than ECC",
+      "Higher communication overhead",
+      "Greater computational complexity",
+      "Limited deployment in current 5G systems",
+      "Requires PQC-compatible implementations"
+    ],
+    "reasoning_support": {
+      "selection_reason_template": "Recommended because quantum-resistant security is required while maintaining strong identity protection for long-term deployments.",
+      "avoid_reason_template": "Avoid when minimizing latency, bandwidth, or computational overhead is more important than quantum resistance.",
+      "decision_examples": [
+        "Government 5G deployment",
+        "Critical infrastructure",
+        "Future-proof enterprise network"
+      ],
+      "explanation_template": "ML-KEM establishes a shared secret using post-quantum cryptography, protecting subscriber identities against both classical and future quantum attacks."
+    },
+    "quantitative_metrics": {
+      "privacy_score": 5,
+      "security_score": 5,
+      "latency_score": 3,
+      "energy_score": 3,
+      "tracking_score": 3,
+      "identity_score": 5,
+      "scalability_score": 4,
+      "deployment_score": 3,
+      "quantum_score": 5
+    },
+    "evidence": {
+      "standardized": true,
+      "research_validated": true,
+      "deployment_evidence": "High",
+      "production_adoption": "Emerging",
+      "technology_readiness_level": 8,
+      "primary_reference": "NIST FIPS 203 (ML-KEM)"
+    },
+    "references": [
+      {
+        "title": "FIPS 203 - Module-Lattice-Based Key Encapsulation Mechanism Standard",
+        "type": "NIST Standard",
+        "identifier": "FIPS 203",
+        "year": "2024"
+      },
+      {
+        "title": "NIST Post-Quantum Cryptography Standardization",
+        "type": "NIST",
+        "identifier": "PQC Project",
+        "year": "2024"
+      },
+      {
+        "title": "CRYSTALS-Kyber Specification",
+        "type": "Research Paper",
+        "identifier": "Kyber",
+        "year": "2021"
+      },
+      {
+        "title": "NIST SP 1800-33",
+        "type": "NIST Practice Guide",
+        "identifier": "1800-33",
+        "year": "2024"
+      }
+    ]
+  },
+  {
+    "id": "SCHEME-003",
+    "name": "Adaptive Padding",
+    "short_name": "AP",
+    "version": "1.0",
+    "description": "Adaptive Padding is a traffic analysis defense mechanism that inserts dummy packets or delays transmissions to obscure communication patterns. Unlike cryptographic schemes, it does not encrypt user data or identities but instead protects metadata such as packet timing and packet size. It is commonly combined with encryption mechanisms to improve overall privacy against passive network observers.",
+    "category": "Traffic Analysis Protection",
+    "primary_privacy_goal": "Traffic Analysis Protection",
+    "secondary_goals": [
+      "Metadata Protection",
+      "Communication Pattern Obfuscation",
+      "Tracking Resistance"
+    ],
+    "cryptographic_characteristics": {
+      "cryptographic_type": "Traffic Obfuscation",
+      "algorithm_family": "Adaptive Traffic Padding",
+      "key_exchange": "None",
+      "symmetric_encryption": "None",
+      "authentication": "None",
+      "key_derivation": "None",
+      "requires_pki": false,
+      "requires_group_manager": false,
+      "requires_trusted_authority": false,
+      "supports_forward_secrecy": false,
+      "supports_backward_secrecy": false,
+      "quantum_resistant": true
+    },
+    "security_metrics": {
+      "privacy_strength": "Very High",
+      "security_strength": "Medium",
+      "identity_protection": "Low",
+      "tracking_protection": "Very High",
+      "anonymous_authentication": false,
+      "confidentiality": "Low",
+      "integrity": "None",
+      "authentication_strength": "None",
+      "non_repudiation": "None",
+      "unlinkability": "High",
+      "untraceability": "High",
+      "anonymity_level": "Medium"
+    },
+    "performance": {
+      "latency": "Medium",
+      "computation_cost": "Low",
+      "communication_overhead": "High",
+      "storage_requirement": "Low",
+      "energy_consumption": "Medium",
+      "bandwidth_requirement": "High",
+      "memory_requirement": "Low",
+      "processing_complexity": "Low"
+    },
+    "deployment": {
+      "scalability": "High",
+      "maturity": "Prototype",
+      "deployment_status": "Limited Deployment",
+      "implementation_complexity": "Medium",
+      "production_ready": false,
+      "3gpp_support": false,
+      "nist_support": false
+    },
+    "requirements": {
+      "requires_public_key": false,
+      "requires_private_key_generator": false,
+      "requires_group_manager": false,
+      "requires_secure_channel": false,
+      "requires_identity_server": false,
+      "requires_certificate_authority": false,
+      "requires_pairing_library": false
+    },
+    "threat_model": {
+      "protects_against": [
+        "Traffic Analysis",
+        "Timing Analysis",
+        "Packet Size Analysis",
+        "Communication Pattern Analysis",
+        "Subscriber Tracking"
+      ],
+      "partially_protects_against": [
+        "Location Inference",
+        "Metadata Leakage"
+      ],
+      "does_not_protect_against": [
+        "Identity Disclosure",
+        "Passive Eavesdropping",
+        "Man-in-the-Middle Attacks",
+        "Replay Attacks",
+        "Denial of Service",
+        "Data Confidentiality Attacks",
+        "Quantum Attacks"
+      ]
+    },
+    "decision_support": {
+      "decision_tags": [
+        "traffic_analysis",
+        "metadata_protection",
+        "tracking_resistance",
+        "hybrid_scheme",
+        "communication_privacy"
+      ],
+      "context_preferences": {
+        "high_privacy": true,
+        "high_security": false,
+        "low_latency": false,
+        "resource_constrained": false,
+        "quantum_safe": true,
+        "tracking_risk": false,
+        "anonymous_authentication_required": false,
+        "identity_protection_required": true,
+        "high_scalability": true
+      },
+      "optimization_targets": [
+        "Reduce Traffic Analysis",
+        "Hide Communication Patterns",
+        "Increase Metadata Privacy",
+        "Reduce Subscriber Tracking"
+      ],
+      "primary_role": {
+        "title": "Traffic analysis and metadata protection",
+        "description": "Primary mechanism for hiding communication patterns and reducing metadata leakage through adaptive traffic padding."
+      },
+      "recommendation_profile": {
+        "capabilities": [
+          "traffic_analysis_resistance",
+          "metadata_protection",
+          "tracking_protection",
+          "padding",
+          "privacy_enhancement",
+          "communication_pattern_obfuscation",
+          "dummy_traffic_generation"
+        ],
+        "best_when": [
+          "Traffic analysis resistance is required",
+          "Communication pattern privacy is important",
+          "Metadata protection is needed",
+          "Subscriber tracking should be minimized",
+          "Passive surveillance",
+          "Communication monitoring",
+          "Network fingerprinting",
+          "Metadata correlation attacks"
+        ],
+        "avoid_when": [
+          "Strict real-time performance is required",
+          "Only confidentiality protection is needed",
+          "Bandwidth overhead must be minimized",
+          "Encryption alone is sufficient",
+          "Battery-powered IoT",
+          "Ultra-low bandwidth",
+          "Mission-critical latency",
+          "Voice over 5G"
+        ],
+        "reasoning_profile": {
+          "high_threat": false,
+          "high_privacy_required": true,
+          "high_metadata_leakage": true,
+          "high_tracking_risk": false,
+          "high_correlation_risk": false,
+          "low_latency_required": false,
+          "low_signal_environment": false,
+          "registration_success": true,
+          "authentication_success": true,
+          "attack_detected": false,
+          "attack_type_affinity": {
+            "duplicate_registration": false,
+            "flooding": true,
+            "invalid_subscriber": false,
+            "replay": false
+          }
+        }
+      },
+      "selection_triggers": [
+        "Traffic Analysis Risk",
+        "Metadata Leakage Risk",
+        "Subscriber Tracking Risk",
+        "Communication Pattern Privacy",
+        "Network Privacy Enhancement",
+        "Passive Observer",
+        "Communication Fingerprinting",
+        "Traffic Correlation"
+      ]
+    },
+    "suitability": {
+      "suitable_conditions": [
+        "High tracking risk",
+        "Traffic analysis attacks",
+        "Passive network surveillance",
+        "Metadata protection requirements",
+        "Privacy-enhanced communications"
+      ],
+      "unsuitable_conditions": [
+        "Strict ultra-low latency applications",
+        "Bandwidth-constrained networks",
+        "Real-time industrial control systems"
+      ],
+      "recommended_for": [
+        "Privacy-sensitive mobile networks",
+        "Government communications",
+        "Military communications",
+        "Critical infrastructure"
+      ],
+      "not_recommended_for": [
+        "Ultra-low bandwidth IoT",
+        "Latency-critical applications"
+      ]
+    },
+    "resource_suitability": {
+      "iot": "Medium",
+      "mobile": "High",
+      "edge": "High",
+      "cloud": "High",
+      "private_5g": "High",
+      "public_5g": "High"
+    },
+    "constraints": {
+      "minimum_cpu": "Low",
+      "minimum_memory": "Low",
+      "supports_low_power_devices": true,
+      "supports_massive_iot": true,
+      "supports_real_time": false
+    },
+    "hybrid_support": {
+      "compatible_with": [
+        "ECIES",
+        "ML-KEM",
+        "Dynamic Pseudonyms",
+        "Zero-Knowledge Proofs"
+      ],
+      "incompatible_with": [],
+      "recommended_combinations": [
+        "ECIES + Adaptive Padding",
+        "ML-KEM + Adaptive Padding",
+        "Dynamic Pseudonyms + Adaptive Padding"
+      ],
+      "combination_reason": [
+        "Adds metadata protection to encrypted communication.",
+        "Reduces traffic analysis attacks.",
+        "Improves resistance against subscriber tracking."
+      ]
+    },
+    "use_cases": [
+      "Traffic Analysis Protection",
+      "Metadata Privacy",
+      "Secure Mobile Networks",
+      "Anonymous Communications",
+      "Privacy-Enhanced 5G"
+    ],
+    "real_world_examples": [
+      "Tor Adaptive Padding",
+      "Anonymous Communication Networks",
+      "Research Privacy Systems"
+    ],
+    "advantages": [
+      "Excellent tracking resistance",
+      "Protects communication metadata",
+      "Low computational overhead",
+      "Can complement any encryption scheme",
+      "Quantum-independent protection",
+      "Reduces traffic fingerprinting",
+      "Independent of encryption algorithm",
+      "Effective against passive network observers"
+    ],
+    "limitations": [
+      "Does not encrypt data",
+      "Does not provide authentication",
+      "Introduces additional bandwidth usage",
+      "May increase communication latency",
+      "Effective only when combined with encryption",
+      "Cannot replace cryptographic protection",
+      "Requires careful traffic tuning",
+      "May increase network congestion"
+    ],
+    "reasoning_support": {
+      "selection_reason_template": "Recommended because communication metadata requires protection against traffic analysis and long-term tracking.",
+      "avoid_reason_template": "Avoid when bandwidth and latency constraints are more important than metadata privacy.",
+      "decision_examples": [
+        "High-surveillance environment",
+        "Privacy-focused enterprise network",
+        "Government communication"
+      ],
+      "explanation_template": "Adaptive Padding inserts dummy traffic to hide communication patterns, reducing the effectiveness of traffic analysis without modifying encrypted content."
+    },
+    "quantitative_metrics": {
+      "privacy_score": 5,
+      "security_score": 2,
+      "latency_score": 3,
+      "energy_score": 3,
+      "tracking_score": 5,
+      "identity_score": 1,
+      "scalability_score": 4,
+      "deployment_score": 2,
+      "quantum_score": 5
+    },
+    "evidence": {
+      "standardized": false,
+      "research_validated": true,
+      "deployment_evidence": "Medium",
+      "production_adoption": "Limited",
+      "technology_readiness_level": 6,
+      "primary_reference": "Shmatikov & Wang - Adaptive Padding for Traffic Analysis Resistance"
+    },
+    "references": [
+      {
+        "title": "Adaptive Padding: Efficient Traffic Analysis Resistance",
+        "type": "Research Paper",
+        "identifier": "Shmatikov & Wang",
+        "year": "2006"
+      },
+      {
+        "title": "Website Fingerprinting Defenses",
+        "type": "Research Survey",
+        "identifier": "Traffic Analysis",
+        "year": "Various"
+      },
+      {
+        "title": "Anonymous Communication Systems",
+        "type": "Research Literature",
+        "identifier": "Tor Padding Mechanisms",
+        "year": "Various"
+      }
+    ]
+  },
+  {
+    "id": "SCHEME-004",
+    "name": "Dynamic Pseudonyms",
+    "short_name": "DP",
+    "version": "1.0",
+    "description": "Dynamic Pseudonyms is a privacy enhancement technique that periodically replaces a user's identifier with temporary pseudonyms to prevent long-term tracking. Instead of exposing a permanent identity across multiple sessions, changing pseudonyms makes it significantly harder for attackers to correlate user activities over time. It is commonly used alongside cryptographic mechanisms rather than replacing them.",
+    "category": "Identity Obfuscation",
+    "primary_privacy_goal": "Tracking Prevention",
+    "secondary_goals": [
+      "Identity Obfuscation",
+      "Metadata Privacy",
+      "Session Unlinkability"
+    ],
+    "cryptographic_characteristics": {
+      "cryptographic_type": "Identity Management",
+      "algorithm_family": "Dynamic Identifier Rotation",
+      "key_exchange": "None",
+      "symmetric_encryption": "None",
+      "authentication": "External Authentication Required",
+      "key_derivation": "None",
+      "requires_pki": false,
+      "requires_group_manager": false,
+      "requires_trusted_authority": true,
+      "supports_forward_secrecy": false,
+      "supports_backward_secrecy": false,
+      "quantum_resistant": true
+    },
+    "security_metrics": {
+      "privacy_strength": "Very High",
+      "security_strength": "Medium",
+      "identity_protection": "High",
+      "tracking_protection": "Very High",
+      "anonymous_authentication": false,
+      "confidentiality": "Low",
+      "integrity": "Low",
+      "authentication_strength": "Low",
+      "non_repudiation": "None",
+      "unlinkability": "Very High",
+      "untraceability": "High",
+      "anonymity_level": "High"
+    },
+    "performance": {
+      "latency": "Low",
+      "computation_cost": "Low",
+      "communication_overhead": "Low",
+      "storage_requirement": "Low",
+      "energy_consumption": "Low",
+      "bandwidth_requirement": "Low",
+      "memory_requirement": "Low",
+      "processing_complexity": "Low"
+    },
+    "deployment": {
+      "scalability": "High",
+      "maturity": "Research",
+      "deployment_status": "Experimental",
+      "implementation_complexity": "Low",
+      "production_ready": false,
+      "3gpp_support": false,
+      "nist_support": false
+    },
+    "requirements": {
+      "requires_public_key": false,
+      "requires_private_key_generator": false,
+      "requires_group_manager": false,
+      "requires_secure_channel": true,
+      "requires_identity_server": true,
+      "requires_certificate_authority": false,
+      "requires_pairing_library": false
+    },
+    "threat_model": {
+      "protects_against": [
+        "Subscriber Tracking",
+        "Long-Term Identity Correlation",
+        "Identity Disclosure",
+        "Location Tracking"
+      ],
+      "partially_protects_against": [
+        "Metadata Leakage",
+        "Traffic Analysis"
+      ],
+      "does_not_protect_against": [
+        "Passive Eavesdropping",
+        "Man-in-the-Middle Attacks",
+        "Replay Attacks",
+        "Denial of Service",
+        "Quantum Attacks",
+        "Data Confidentiality Attacks"
+      ]
+    },
+    "decision_support": {
+      "decision_tags": [
+        "tracking_prevention",
+        "identity_obfuscation",
+        "metadata_privacy",
+        "lightweight",
+        "hybrid_scheme"
+      ],
+      "context_preferences": {
+        "high_privacy": true,
+        "high_security": false,
+        "low_latency": true,
+        "resource_constrained": true,
+        "quantum_safe": true,
+        "tracking_risk": true,
+        "anonymous_authentication_required": false,
+        "identity_protection_required": true,
+        "high_scalability": true
+      },
+      "optimization_targets": [
+        "Reduce Subscriber Tracking",
+        "Increase Identity Privacy",
+        "Improve Unlinkability",
+        "Support Frequent Mobility"
+      ],
+      "primary_role": {
+        "title": "Tracking prevention through dynamic identity rotation",
+        "description": "Primary mechanism for preventing long-term subscriber tracking by periodically changing user identifiers and improving unlinkability."
+      },
+      "recommendation_profile": {
+        "capabilities": [
+          "identity_rotation",
+          "tracking_protection",
+          "unlinkability",
+          "anonymity",
+          "metadata_protection",
+          "session_unlinkability",
+          "location_privacy"
+        ],
+        "best_when": [
+          "User identity privacy is required",
+          "Frequent mobility is expected",
+          "Subscriber tracking prevention is important",
+          "Identity unlinkability is required",
+          "High mobility users",
+          "Frequent handovers",
+          "Long-term subscriber monitoring",
+          "Smart city deployments",
+          "Vehicular communications"
+        ],
+        "avoid_when": [
+          "Strong data confidentiality is the primary objective",
+          "Authentication without identity exposure is unnecessary",
+          "Long-term static identities are acceptable",
+          "Strong cryptographic confidentiality is required",
+          "Identity encryption is required",
+          "Standalone authentication is required",
+          "Protection against active attacks is required"
+        ],
+        "reasoning_profile": {
+          "high_threat": false,
+          "high_privacy_required": true,
+          "high_metadata_leakage": false,
+          "high_tracking_risk": true,
+          "high_correlation_risk": true,
+          "low_latency_required": true,
+          "low_signal_environment": true,
+          "registration_success": true,
+          "authentication_success": true,
+          "attack_detected": false,
+          "attack_type_affinity": {
+            "duplicate_registration": true,
+            "flooding": false,
+            "invalid_subscriber": false,
+            "replay": false
+          }
+        }
+      },
+      "selection_triggers": [
+        "High Mobility",
+        "Subscriber Tracking Risk",
+        "Location Privacy Required",
+        "Identity Unlinkability",
+        "Frequent Identifier Changes",
+        "Long-term Tracking Risk",
+        "Mobility Management",
+        "Session Correlation Risk"
+      ]
+    },
+    "suitability": {
+      "suitable_conditions": [
+        "Long-term subscriber tracking risk",
+        "Frequent UE mobility",
+        "Passive surveillance environments",
+        "Privacy-sensitive deployments",
+        "Large-scale mobile networks"
+      ],
+      "unsuitable_conditions": [
+        "When strong cryptographic confidentiality alone is required",
+        "Standalone authentication systems",
+        "Highly synchronized identity management systems"
+      ],
+      "recommended_for": [
+        "Commercial 5G",
+        "Smart Cities",
+        "Connected Vehicles",
+        "Large IoT Deployments",
+        "Mobile Networks"
+      ],
+      "not_recommended_for": [
+        "Standalone cryptographic protection",
+        "Applications requiring permanent identifiers"
+      ]
+    },
+    "resource_suitability": {
+      "iot": "Very High",
+      "mobile": "Very High",
+      "edge": "High",
+      "cloud": "High",
+      "private_5g": "High",
+      "public_5g": "Very High"
+    },
+    "constraints": {
+      "minimum_cpu": "Low",
+      "minimum_memory": "Low",
+      "supports_low_power_devices": true,
+      "supports_massive_iot": true,
+      "supports_real_time": true
+    },
+    "hybrid_support": {
+      "compatible_with": [
+        "ECIES",
+        "ML-KEM",
+        "Adaptive Padding",
+        "Zero-Knowledge Proofs",
+        "Identity-Based Encryption"
+      ],
+      "incompatible_with": [],
+      "recommended_combinations": [
+        "ECIES + Dynamic Pseudonyms",
+        "ML-KEM + Dynamic Pseudonyms",
+        "Dynamic Pseudonyms + Adaptive Padding"
+      ],
+      "combination_reason": [
+        "Provides identity encryption and rotating identifiers.",
+        "Adds quantum-safe identity protection.",
+        "Combines tracking prevention with metadata protection."
+      ]
+    },
+    "use_cases": [
+      "Subscriber Tracking Prevention",
+      "5G Mobility",
+      "IoT Privacy",
+      "Vehicle-to-Everything (V2X)",
+      "Location Privacy"
+    ],
+    "real_world_examples": [
+      "Temporary Mobile Subscriber Identifiers",
+      "Research-based Dynamic Identity Systems",
+      "Privacy-preserving Vehicular Networks"
+    ],
+    "advantages": [
+      "Excellent protection against long-term tracking",
+      "Very lightweight",
+      "Minimal computational overhead",
+      "Easy to integrate",
+      "Highly scalable",
+      "Suitable for resource-constrained devices",
+      "Excellent mobility support",
+      "Improves session unlinkability",
+      "Reduces long-term behavioral profiling"
+    ],
+    "limitations": [
+      "Does not encrypt data",
+      "Requires secure pseudonym management",
+      "Does not provide authentication",
+      "Cannot prevent active attacks by itself",
+      "Requires synchronization between entities",
+      "Requires reliable pseudonym lifecycle management",
+      "Privacy depends on pseudonym rotation frequency",
+      "Cannot replace cryptographic identity protection"
+    ],
+    "reasoning_support": {
+      "selection_reason_template": "Recommended because subscriber tracking risk is high and identity rotation significantly improves privacy without introducing noticeable overhead.",
+      "avoid_reason_template": "Avoid when confidentiality or authentication is the primary requirement, since Dynamic Pseudonyms only hide identity relationships.",
+      "decision_examples": [
+        "Highly mobile subscribers",
+        "Smart city deployment",
+        "Connected vehicles",
+        "Large IoT network"
+      ],
+      "explanation_template": "Dynamic Pseudonyms periodically replace user identifiers, making it difficult for attackers to correlate multiple sessions and track subscribers over time."
+    },
+    "quantitative_metrics": {
+      "privacy_score": 4,
+      "security_score": 2,
+      "latency_score": 5,
+      "energy_score": 5,
+      "tracking_score": 5,
+      "identity_score": 3,
+      "scalability_score": 5,
+      "deployment_score": 2,
+      "quantum_score": 5
+    },
+    "evidence": {
+      "standardized": false,
+      "research_validated": true,
+      "deployment_evidence": "Medium",
+      "production_adoption": "Experimental",
+      "technology_readiness_level": 5,
+      "primary_reference": "Privacy-Preserving Identity Management in Mobile Networks"
+    },
+    "references": [
+      {
+        "title": "Privacy-Preserving Identity Management in Mobile Networks",
+        "type": "Research Paper",
+        "identifier": "Dynamic Pseudonym Systems",
+        "year": "Various"
+      },
+      {
+        "title": "Vehicular Privacy through Dynamic Pseudonyms",
+        "type": "Research Paper",
+        "identifier": "VANET Privacy",
+        "year": "Various"
+      },
+      {
+        "title": "Location Privacy in Mobile Networks",
+        "type": "Research Survey",
+        "identifier": "Mobile Privacy",
+        "year": "Various"
+      }
+    ]
+  },
+  {
+    "id": "SCHEME-005",
+    "name": "Identity-Based Encryption",
+    "short_name": "IBE",
+    "version": "1.0",
+    "description": "Identity-Based Encryption (IBE) is a public-key cryptographic scheme in which a user's unique identity, such as an email address or subscriber identity, acts as the public key. A trusted Private Key Generator (PKG) generates the corresponding private key. This eliminates the need for traditional public key certificates while simplifying secure communication and identity management.",
+    "category": "Identity Protection",
+    "primary_privacy_goal": "Identity-Based Confidentiality",
+    "secondary_goals": [
+      "Certificate-less Public Key Management",
+      "Secure Identity Encryption",
+      "Simplified Key Distribution"
+    ],
+    "cryptographic_characteristics": {
+      "cryptographic_type": "Identity-Based Public Key Encryption",
+      "algorithm_family": "Pairing-Based Cryptography",
+      "key_exchange": "Identity-Based Key Distribution",
+      "symmetric_encryption": "Optional Hybrid Encryption",
+      "authentication": "Identity Verification",
+      "key_derivation": "PKG Generated",
+      "requires_pki": false,
+      "requires_group_manager": false,
+      "requires_trusted_authority": true,
+      "supports_forward_secrecy": false,
+      "supports_backward_secrecy": false,
+      "quantum_resistant": false
+    },
+    "security_metrics": {
+      "privacy_strength": "High",
+      "security_strength": "High",
+      "identity_protection": "Very High",
+      "tracking_protection": "Medium",
+      "anonymous_authentication": false,
+      "confidentiality": "Very High",
+      "integrity": "Medium",
+      "authentication_strength": "High",
+      "non_repudiation": "Medium",
+      "unlinkability": "Medium",
+      "untraceability": "Medium",
+      "anonymity_level": "Medium"
+    },
+    "performance": {
+      "latency": "Medium",
+      "computation_cost": "High",
+      "communication_overhead": "Medium",
+      "storage_requirement": "Medium",
+      "energy_consumption": "High",
+      "bandwidth_requirement": "Medium",
+      "memory_requirement": "Medium",
+      "processing_complexity": "High"
+    },
+    "deployment": {
+      "scalability": "Medium",
+      "maturity": "Research",
+      "deployment_status": "Limited Deployment",
+      "implementation_complexity": "High",
+      "production_ready": false,
+      "3gpp_support": false,
+      "nist_support": false
+    },
+    "requirements": {
+      "requires_public_key": false,
+      "requires_private_key_generator": true,
+      "requires_group_manager": false,
+      "requires_secure_channel": true,
+      "requires_identity_server": true,
+      "requires_certificate_authority": false,
+      "requires_pairing_library": true
+    },
+    "threat_model": {
+      "protects_against": [
+        "Identity Disclosure",
+        "Passive Eavesdropping",
+        "Confidentiality Breaches",
+        "Certificate-Based Attacks"
+      ],
+      "partially_protects_against": [
+        "Subscriber Tracking",
+        "Man-in-the-Middle Attacks"
+      ],
+      "does_not_protect_against": [
+        "Quantum Attacks",
+        "Replay Attacks",
+        "Denial of Service",
+        "Traffic Analysis",
+        "Private Key Generator Compromise"
+      ]
+    },
+    "decision_support": {
+      "decision_tags": [
+        "identity_encryption",
+        "certificate_less",
+        "trusted_authority",
+        "pairing_based",
+        "privacy"
+      ],
+      "context_preferences": {
+        "high_privacy": false,
+        "high_security": true,
+        "low_latency": false,
+        "resource_constrained": false,
+        "quantum_safe": false,
+        "tracking_risk": false,
+        "anonymous_authentication_required": false,
+        "identity_protection_required": true,
+        "high_scalability": false
+      },
+      "optimization_targets": [
+        "Simplify Key Management",
+        "Eliminate Certificates",
+        "Maximize Identity Confidentiality",
+        "Reduce Certificate Management Overhead"
+      ],
+      "primary_role": {
+        "title": "Certificate-less identity encryption",
+        "description": "Primary mechanism for identity-centric encryption in environments where eliminating traditional certificate management is a priority."
+      },
+      "recommendation_profile": {
+        "capabilities": [
+          "identity_based_encryption",
+          "authentication_hardening",
+          "identity_protection",
+          "secure_key_management",
+          "certificate_less_security",
+          "identity_centric_cryptography"
+        ],
+        "best_when": [
+          "Certificate-less encryption is preferred",
+          "Simplified key management is required",
+          "Identity-based communication is supported",
+          "Trusted Private Key Generator is available",
+          "Enterprise PKI replacement",
+          "Managed private networks",
+          "Certificate management overhead is high",
+          "Closed enterprise environments"
+        ],
+        "avoid_when": [
+          "No trusted authority exists",
+          "Quantum-resistant security is required",
+          "Very lightweight deployment is needed",
+          "Pairing-based cryptography is undesirable",
+          "Large public deployments",
+          "Highly distributed systems",
+          "Ultra-low latency",
+          "Battery-powered IoT"
+        ],
+        "reasoning_profile": {
+          "high_threat": false,
+          "high_privacy_required": false,
+          "high_metadata_leakage": false,
+          "high_tracking_risk": false,
+          "high_correlation_risk": false,
+          "low_latency_required": false,
+          "low_signal_environment": false,
+          "registration_success": true,
+          "authentication_success": true,
+          "attack_detected": false,
+          "attack_type_affinity": {
+            "duplicate_registration": false,
+            "flooding": false,
+            "invalid_subscriber": false,
+            "replay": true
+          }
+        }
+      },
+      "selection_triggers": [
+        "Certificate Management Overhead",
+        "Identity-Based Communication",
+        "Trusted PKG Available",
+        "Simplified Key Management",
+        "Enterprise Deployment",
+        "Certificate-less authentication",
+        "Centralized identity management",
+        "Managed security infrastructure"
+      ]
+    },
+    "suitability": {
+      "suitable_conditions": [
+        "Certificate management is difficult",
+        "Identity-centric communication",
+        "Controlled enterprise deployments",
+        "Trusted authority available",
+        "Secure messaging"
+      ],
+      "unsuitable_conditions": [
+        "No trusted authority available",
+        "Quantum-safe deployments",
+        "Highly distributed systems",
+        "Ultra-low latency applications"
+      ],
+      "recommended_for": [
+        "Enterprise Networks",
+        "Government Infrastructure",
+        "Secure Messaging",
+        "Identity-Centric Systems"
+      ],
+      "not_recommended_for": [
+        "Public decentralized systems",
+        "Quantum-secure infrastructures"
+      ]
+    },
+    "resource_suitability": {
+      "iot": "Low",
+      "mobile": "Medium",
+      "edge": "Medium",
+      "cloud": "Very High",
+      "private_5g": "High",
+      "public_5g": "Medium"
+    },
+    "constraints": {
+      "minimum_cpu": "High",
+      "minimum_memory": "Medium",
+      "supports_low_power_devices": false,
+      "supports_massive_iot": false,
+      "supports_real_time": false
+    },
+    "hybrid_support": {
+      "compatible_with": [
+        "Adaptive Padding",
+        "Dynamic Pseudonyms",
+        "Zero-Knowledge Proofs"
+      ],
+      "incompatible_with": [],
+      "recommended_combinations": [
+        "IBE + Adaptive Padding",
+        "IBE + Dynamic Pseudonyms",
+        "IBE + Zero-Knowledge Proofs"
+      ],
+      "combination_reason": [
+        "Adaptive Padding protects communication metadata.",
+        "Dynamic Pseudonyms improve tracking resistance.",
+        "Zero-Knowledge Proofs provide privacy-preserving authentication."
+      ]
+    },
+    "use_cases": [
+      "Identity-Centric Encryption",
+      "Secure Email",
+      "Enterprise Authentication",
+      "Access Control",
+      "Identity-Based Secure Communication"
+    ],
+    "real_world_examples": [
+      "Boneh-Franklin IBE",
+      "Secure Enterprise Messaging",
+      "Research Identity-Based Communication Systems"
+    ],
+    "advantages": [
+      "No digital certificates required",
+      "Simplified public key management",
+      "Strong identity confidentiality",
+      "Suitable for identity-centric systems",
+      "Reduces certificate management complexity",
+      "Simplifies enterprise identity management",
+      "Reduces certificate distribution complexity",
+      "Suitable for centralized trust models"
+    ],
+    "limitations": [
+      "Requires a fully trusted PKG",
+      "Single point of trust",
+      "High computational complexity",
+      "Not quantum resistant",
+      "Limited large-scale deployment",
+      "Key escrow problem",
+      "Private key compromise impacts trust",
+      "Less suitable for decentralized deployments"
+    ],
+    "reasoning_support": {
+      "selection_reason_template": "Recommended because certificate management overhead should be minimized while maintaining strong identity-based confidentiality.",
+      "avoid_reason_template": "Avoid when quantum resistance, decentralized trust, or very low latency is required.",
+      "decision_examples": [
+        "Enterprise secure communication",
+        "Government identity infrastructure",
+        "Certificate-less authentication systems"
+      ],
+      "explanation_template": "Identity-Based Encryption uses a user's identity as the public key, eliminating certificate management while providing strong confidentiality through a trusted Private Key Generator."
+    },
+    "quantitative_metrics": {
+      "privacy_score": 4,
+      "security_score": 4,
+      "latency_score": 3,
+      "energy_score": 2,
+      "tracking_score": 2,
+      "identity_score": 5,
+      "scalability_score": 3,
+      "deployment_score": 2,
+      "quantum_score": 1
+    },
+    "evidence": {
+      "standardized": false,
+      "research_validated": true,
+      "deployment_evidence": "High",
+      "production_adoption": "Limited",
+      "technology_readiness_level": 7,
+      "primary_reference": "Boneh-Franklin Identity-Based Encryption (2001)"
+    },
+    "references": [
+      {
+        "title": "Identity-Based Encryption from the Weil Pairing",
+        "type": "Research Paper",
+        "identifier": "Boneh-Franklin",
+        "year": "2001"
+      },
+      {
+        "title": "RFC 5091 - Identity-Based Cryptography Using ECC",
+        "type": "RFC",
+        "identifier": "RFC 5091",
+        "year": "2007"
+      },
+      {
+        "title": "Pairing-Based Cryptography",
+        "type": "Research Survey",
+        "identifier": "PBC Survey",
+        "year": "Various"
+      }
+    ]
+  },
+  {
+    "id": "SCHEME-006",
+    "name": "Group Signatures",
+    "short_name": "GS",
+    "version": "1.0",
+    "description": "Group Signatures are cryptographic signature schemes that allow a member of a predefined group to sign messages anonymously on behalf of the group. A verifier can confirm that the signature was produced by a legitimate group member but cannot determine which member generated it. A trusted Group Manager retains the capability to reveal the signer's identity when accountability is required.",
+    "category": "Anonymous Authentication",
+    "primary_privacy_goal": "Anonymous Authentication",
+    "secondary_goals": [
+      "Signer Anonymity",
+      "Conditional Traceability",
+      "Accountable Authentication"
+    ],
+    "cryptographic_characteristics": {
+      "cryptographic_type": "Digital Signature",
+      "algorithm_family": "Group Signature Cryptography",
+      "key_exchange": "None",
+      "symmetric_encryption": "None",
+      "authentication": "Group Membership Authentication",
+      "key_derivation": "Group Manager",
+      "requires_pki": false,
+      "requires_group_manager": true,
+      "requires_trusted_authority": true,
+      "supports_forward_secrecy": false,
+      "supports_backward_secrecy": false,
+      "quantum_resistant": false
+    },
+    "security_metrics": {
+      "privacy_strength": "Very High",
+      "security_strength": "High",
+      "identity_protection": "Very High",
+      "tracking_protection": "High",
+      "anonymous_authentication": true,
+      "confidentiality": "Medium",
+      "integrity": "Very High",
+      "authentication_strength": "Very High",
+      "non_repudiation": "High",
+      "unlinkability": "High",
+      "untraceability": "High",
+      "anonymity_level": "Very High"
+    },
+    "performance": {
+      "latency": "High",
+      "computation_cost": "High",
+      "communication_overhead": "Medium",
+      "storage_requirement": "High",
+      "energy_consumption": "High",
+      "bandwidth_requirement": "Medium",
+      "memory_requirement": "High",
+      "processing_complexity": "High"
+    },
+    "deployment": {
+      "scalability": "Medium",
+      "maturity": "Research",
+      "deployment_status": "Prototype",
+      "implementation_complexity": "High",
+      "production_ready": false,
+      "3gpp_support": false,
+      "nist_support": false
+    },
+    "requirements": {
+      "requires_public_key": true,
+      "requires_private_key_generator": false,
+      "requires_group_manager": true,
+      "requires_secure_channel": false,
+      "requires_identity_server": false,
+      "requires_certificate_authority": false,
+      "requires_pairing_library": true
+    },
+    "threat_model": {
+      "protects_against": [
+        "Identity Disclosure",
+        "Unauthorized Authentication",
+        "Identity Impersonation",
+        "Subscriber Tracking",
+        "Membership Privacy Leakage"
+      ],
+      "partially_protects_against": [
+        "Traffic Analysis",
+        "Insider Attacks"
+      ],
+      "does_not_protect_against": [
+        "Passive Eavesdropping",
+        "Replay Attacks",
+        "Denial of Service",
+        "Quantum Attacks",
+        "Group Manager Compromise"
+      ]
+    },
+    "decision_support": {
+      "decision_tags": [
+        "anonymous_authentication",
+        "group_security",
+        "accountability",
+        "traceability",
+        "privacy"
+      ],
+      "context_preferences": {
+        "high_privacy": true,
+        "high_security": true,
+        "low_latency": false,
+        "resource_constrained": false,
+        "quantum_safe": false,
+        "tracking_risk": true,
+        "anonymous_authentication_required": true,
+        "identity_protection_required": true,
+        "high_scalability": false
+      },
+      "optimization_targets": [
+        "Provide Anonymous Authentication",
+        "Preserve Member Privacy",
+        "Enable Conditional Traceability",
+        "Ensure Authentication Accountability"
+      ],
+      "primary_role": {
+        "title": "Anonymous authentication with accountability",
+        "description": "Primary mechanism for authenticating members anonymously within trusted groups while preserving traceability when required."
+      },
+      "recommendation_profile": {
+        "capabilities": [
+          "anonymous_authentication",
+          "group_authentication",
+          "unlinkability",
+          "non_repudiation",
+          "member_revocation",
+          "conditional_anonymity"
+        ],
+        "best_when": [
+          "Anonymous authentication is required",
+          "Member accountability must be preserved",
+          "Conditional traceability is needed",
+          "Group-based access control is implemented",
+          "Consortium networks",
+          "Enterprise federations",
+          "Multi-operator collaboration",
+          "Trusted organizations"
+        ],
+        "avoid_when": [
+          "Resource-constrained IoT devices are used",
+          "No trusted Group Manager exists",
+          "Very low authentication latency is required",
+          "Simple digital signatures are sufficient",
+          "Single-user authentication",
+          "Highly dynamic memberships",
+          "Certificate-less environments",
+          "Minimal computational overhead"
+        ],
+        "reasoning_profile": {
+          "high_threat": false,
+          "high_privacy_required": true,
+          "high_metadata_leakage": false,
+          "high_tracking_risk": true,
+          "high_correlation_risk": true,
+          "low_latency_required": false,
+          "low_signal_environment": false,
+          "registration_success": true,
+          "authentication_success": true,
+          "attack_detected": false,
+          "attack_type_affinity": {
+            "duplicate_registration": true,
+            "flooding": false,
+            "invalid_subscriber": true,
+            "replay": false
+          }
+        }
+      },
+      "selection_triggers": [
+        "Anonymous Authentication",
+        "Group Communication",
+        "Membership Privacy",
+        "Conditional Traceability",
+        "Accountable Anonymity",
+        "Trusted group membership",
+        "Collaborative network access",
+        "Role-based anonymous access"
+      ]
+    },
+    "suitability": {
+      "suitable_conditions": [
+        "Anonymous authentication required",
+        "Conditional accountability required",
+        "Group-based communication",
+        "Privacy-sensitive authentication",
+        "Trusted group management available"
+      ],
+      "unsuitable_conditions": [
+        "Ultra-low latency systems",
+        "Highly resource-constrained devices",
+        "Decentralized trust environments",
+        "Quantum-safe deployments"
+      ],
+      "recommended_for": [
+        "Government Networks",
+        "Military Communication",
+        "Consortium Blockchain",
+        "Enterprise Authentication"
+      ],
+      "not_recommended_for": [
+        "Battery-powered IoT devices",
+        "Massive-scale mobile authentication"
+      ]
+    },
+    "resource_suitability": {
+      "iot": "Low",
+      "mobile": "Medium",
+      "edge": "Medium",
+      "cloud": "Very High",
+      "private_5g": "High",
+      "public_5g": "Medium"
+    },
+    "constraints": {
+      "minimum_cpu": "High",
+      "minimum_memory": "High",
+      "supports_low_power_devices": false,
+      "supports_massive_iot": false,
+      "supports_real_time": false
+    },
+    "hybrid_support": {
+      "compatible_with": [
+        "Adaptive Padding",
+        "Dynamic Pseudonyms",
+        "ML-KEM"
+      ],
+      "incompatible_with": [],
+      "recommended_combinations": [
+        "Group Signatures + Adaptive Padding",
+        "Group Signatures + ML-KEM",
+        "Group Signatures + Dynamic Pseudonyms"
+      ],
+      "combination_reason": [
+        "Adaptive Padding protects metadata.",
+        "ML-KEM provides quantum-safe key establishment.",
+        "Dynamic Pseudonyms reduce long-term tracking."
+      ]
+    },
+    "use_cases": [
+      "Anonymous Authentication",
+      "Vehicle-to-Vehicle Communication",
+      "Consortium Blockchain",
+      "Enterprise Identity Management",
+      "Military Networks"
+    ],
+    "real_world_examples": [
+      "EPID (Enhanced Privacy ID)",
+      "Direct Anonymous Attestation (DAA)",
+      "Vehicular Ad Hoc Networks (VANETs)"
+    ],
+    "advantages": [
+      "Strong anonymous authentication",
+      "Conditional traceability",
+      "High accountability",
+      "Protects user identity",
+      "Suitable for group-oriented systems",
+      "Supports accountable anonymity",
+      "Enables secure collaborative authentication",
+      "Balances privacy and auditability"
+    ],
+    "limitations": [
+      "Requires trusted Group Manager",
+      "High computational complexity",
+      "Complex member revocation",
+      "Large signature size",
+      "Not quantum resistant",
+      "Requires trusted group manager",
+      "Complex member revocation",
+      "Signature size larger than conventional signatures"
+    ],
+    "reasoning_support": {
+      "selection_reason_template": "Recommended because anonymous authentication is required while maintaining the ability to identify malicious users when necessary.",
+      "avoid_reason_template": "Avoid when computational resources are limited or ultra-low latency is required.",
+      "decision_examples": [
+        "Vehicular communication",
+        "Military communication",
+        "Enterprise anonymous authentication"
+      ],
+      "explanation_template": "Group Signatures allow authenticated communication without revealing the individual identity of the signer, while enabling trusted authorities to reveal identities when accountability is necessary."
+    },
+    "quantitative_metrics": {
+      "privacy_score": 5,
+      "security_score": 4,
+      "latency_score": 2,
+      "energy_score": 2,
+      "tracking_score": 5,
+      "identity_score": 3,
+      "scalability_score": 3,
+      "deployment_score": 2,
+      "quantum_score": 1
+    },
+    "evidence": {
+      "standardized": false,
+      "research_validated": true,
+      "deployment_evidence": "High",
+      "production_adoption": "Limited",
+      "technology_readiness_level": 7,
+      "primary_reference": "Chaum and van Heyst - Group Signatures (1991)"
+    },
+    "references": [
+      {
+        "title": "Group Signatures",
+        "type": "Research Paper",
+        "identifier": "Chaum and van Heyst",
+        "year": "1991"
+      },
+      {
+        "title": "Direct Anonymous Attestation",
+        "type": "Research Paper",
+        "identifier": "Brickell et al.",
+        "year": "2004"
+      },
+      {
+        "title": "Enhanced Privacy ID (EPID)",
+        "type": "Intel Technology",
+        "identifier": "EPID",
+        "year": "Various"
+      }
+    ]
+  },
+  {
+    "id": "SCHEME-007",
+    "name": "Zero-Knowledge Proofs",
+    "short_name": "ZKP",
+    "version": "1.0",
+    "description": "Zero-Knowledge Proofs (ZKPs) are cryptographic protocols that enable one party (the prover) to convince another party (the verifier) that a statement is true without revealing any additional information beyond the validity of the statement. They provide privacy-preserving authentication by eliminating the need to disclose sensitive secrets such as passwords, cryptographic keys, or subscriber identities.",
+    "category": "Privacy-Preserving Authentication",
+    "primary_privacy_goal": "Privacy-Preserving Authentication",
+    "secondary_goals": [
+      "Secret Protection",
+      "Authentication Without Disclosure",
+      "Minimal Information Leakage"
+    ],
+    "cryptographic_characteristics": {
+      "cryptographic_type": "Cryptographic Proof Protocol",
+      "algorithm_family": "Zero-Knowledge Cryptography",
+      "key_exchange": "None",
+      "symmetric_encryption": "None",
+      "authentication": "Zero-Knowledge Authentication",
+      "key_derivation": "Not Applicable",
+      "requires_pki": false,
+      "requires_group_manager": false,
+      "requires_trusted_authority": false,
+      "supports_forward_secrecy": false,
+      "supports_backward_secrecy": false,
+      "quantum_resistant": false
+    },
+    "security_metrics": {
+      "privacy_strength": "Very High",
+      "security_strength": "Very High",
+      "identity_protection": "High",
+      "tracking_protection": "Medium",
+      "anonymous_authentication": true,
+      "confidentiality": "High",
+      "integrity": "Very High",
+      "authentication_strength": "Very High",
+      "non_repudiation": "Low",
+      "unlinkability": "High",
+      "untraceability": "Medium",
+      "anonymity_level": "Very High"
+    },
+    "performance": {
+      "latency": "Medium",
+      "computation_cost": "High",
+      "communication_overhead": "Medium",
+      "storage_requirement": "Medium",
+      "energy_consumption": "High",
+      "bandwidth_requirement": "Medium",
+      "memory_requirement": "Medium",
+      "processing_complexity": "High"
+    },
+    "deployment": {
+      "scalability": "Medium",
+      "maturity": "Prototype",
+      "deployment_status": "Emerging",
+      "implementation_complexity": "High",
+      "production_ready": false,
+      "3gpp_support": false,
+      "nist_support": false
+    },
+    "requirements": {
+      "requires_public_key": false,
+      "requires_private_key_generator": false,
+      "requires_group_manager": false,
+      "requires_secure_channel": false,
+      "requires_identity_server": false,
+      "requires_certificate_authority": false,
+      "requires_pairing_library": false
+    },
+    "threat_model": {
+      "protects_against": [
+        "Identity Disclosure",
+        "Credential Disclosure",
+        "Unauthorized Authentication",
+        "Secret Leakage",
+        "Knowledge Extraction"
+      ],
+      "partially_protects_against": [
+        "Subscriber Tracking",
+        "Identity Correlation"
+      ],
+      "does_not_protect_against": [
+        "Traffic Analysis",
+        "Passive Eavesdropping",
+        "Replay Attacks",
+        "Denial of Service",
+        "Quantum Attacks"
+      ]
+    },
+    "decision_support": {
+      "decision_tags": [
+        "zero_knowledge",
+        "anonymous_authentication",
+        "privacy_preserving",
+        "authentication",
+        "secret_protection"
+      ],
+      "context_preferences": {
+        "high_privacy": true,
+        "high_security": true,
+        "low_latency": false,
+        "resource_constrained": false,
+        "quantum_safe": false,
+        "tracking_risk": false,
+        "anonymous_authentication_required": true,
+        "identity_protection_required": false,
+        "high_scalability": false
+      },
+      "optimization_targets": [
+        "Privacy-Preserving Authentication",
+        "Prevent Secret Disclosure",
+        "Minimize Information Leakage",
+        "Strong Authentication"
+      ],
+      "primary_role": {
+        "title": "Privacy-preserving verification",
+        "description": "Primary mechanism for proving knowledge or identity attributes without revealing the underlying sensitive information."
+      },
+      "recommendation_profile": {
+        "capabilities": [
+          "zero_knowledge",
+          "anonymous_authentication",
+          "identity_verification",
+          "privacy_preserving_authentication",
+          "proof_without_disclosure",
+          "selective_information_disclosure",
+          "privacy_preserving_verification"
+        ],
+        "best_when": [
+          "Authentication without revealing secrets is required",
+          "Maximum privacy is desired",
+          "Credential disclosure must be prevented",
+          "Privacy-preserving authentication is needed",
+          "Digital identity systems",
+          "Privacy-preserving login",
+          "Attribute verification",
+          "Age verification",
+          "Access control without identity disclosure"
+        ],
+        "avoid_when": [
+          "Resource-constrained devices generate proofs",
+          "Ultra-low latency is required",
+          "Traditional authentication is sufficient",
+          "Proof generation overhead is unacceptable",
+          "Ultra-low latency systems",
+          "Battery-powered IoT",
+          "Simple identity encryption",
+          "Basic authentication requirements"
+        ],
+        "reasoning_profile": {
+          "high_threat": false,
+          "high_privacy_required": true,
+          "high_metadata_leakage": false,
+          "high_tracking_risk": false,
+          "high_correlation_risk": false,
+          "low_latency_required": false,
+          "low_signal_environment": false,
+          "registration_success": true,
+          "authentication_success": true,
+          "attack_detected": false,
+          "attack_type_affinity": {
+            "duplicate_registration": false,
+            "flooding": false,
+            "invalid_subscriber": true,
+            "replay": false
+          }
+        }
+      },
+      "selection_triggers": [
+        "Privacy-Preserving Authentication",
+        "Secret Protection",
+        "Credential Privacy",
+        "Zero-Knowledge Verification",
+        "High Privacy Requirement",
+        "Selective attribute verification",
+        "Privacy-preserving access control",
+        "Identity proof without disclosure"
+      ]
+    },
+    "suitability": {
+      "suitable_conditions": [
+        "Authentication without revealing secrets",
+        "Privacy-sensitive authentication",
+        "Decentralized identity systems",
+        "Digital identity verification",
+        "High-security environments"
+      ],
+      "unsuitable_conditions": [
+        "Ultra-low latency applications",
+        "Highly resource-constrained IoT devices",
+        "Simple authentication systems"
+      ],
+      "recommended_for": [
+        "Digital Identity",
+        "Blockchain",
+        "Government Systems",
+        "Financial Systems",
+        "Enterprise Authentication"
+      ],
+      "not_recommended_for": [
+        "Low-power embedded devices",
+        "Very small IoT sensors"
+      ]
+    },
+    "resource_suitability": {
+      "iot": "Low",
+      "mobile": "Medium",
+      "edge": "Medium",
+      "cloud": "Very High",
+      "private_5g": "High",
+      "public_5g": "Medium"
+    },
+    "constraints": {
+      "minimum_cpu": "High",
+      "minimum_memory": "Medium",
+      "supports_low_power_devices": false,
+      "supports_massive_iot": false,
+      "supports_real_time": false
+    },
+    "hybrid_support": {
+      "compatible_with": [
+        "ML-KEM",
+        "Adaptive Padding",
+        "Dynamic Pseudonyms",
+        "Identity-Based Encryption"
+      ],
+      "incompatible_with": [],
+      "recommended_combinations": [
+        "ML-KEM + Zero-Knowledge Proofs",
+        "Identity-Based Encryption + Zero-Knowledge Proofs",
+        "Zero-Knowledge Proofs + Adaptive Padding"
+      ],
+      "combination_reason": [
+        "ML-KEM provides quantum-safe key establishment while ZKP authenticates privately.",
+        "IBE secures identities while ZKP authenticates without revealing secrets.",
+        "Adaptive Padding protects metadata while ZKP protects authentication."
+      ]
+    },
+    "use_cases": [
+      "Privacy-Preserving Authentication",
+      "Blockchain",
+      "Digital Identity",
+      "Secure Login Systems",
+      "Identity Verification"
+    ],
+    "real_world_examples": [
+      "zk-SNARKs",
+      "zk-STARKs",
+      "Zcash",
+      "Hyperledger Indy"
+    ],
+    "advantages": [
+      "No secret disclosure",
+      "Excellent privacy",
+      "Strong authentication",
+      "Suitable for decentralized systems",
+      "Minimal information leakage",
+      "Supports anonymous authentication"
+    ],
+    "limitations": [
+      "High computational complexity",
+      "Complex implementation",
+      "Can introduce latency",
+      "Requires specialized cryptographic protocols",
+      "Not yet common in mobile networks"
+    ],
+    "reasoning_support": {
+      "selection_reason_template": "Recommended because authentication must be performed without exposing sensitive credentials or subscriber identities.",
+      "avoid_reason_template": "Avoid when computational efficiency or ultra-low latency is more important than authentication privacy.",
+      "decision_examples": [
+        "Privacy-preserving login",
+        "Government identity verification",
+        "Blockchain authentication",
+        "Enterprise digital identity"
+      ],
+      "explanation_template": "Zero-Knowledge Proofs allow a user to prove possession of a secret without revealing the secret itself, enabling strong privacy-preserving authentication."
+    },
+    "quantitative_metrics": {
+      "privacy_score": 5,
+      "security_score": 5,
+      "latency_score": 3,
+      "energy_score": 2,
+      "tracking_score": 3,
+      "identity_score": 4,
+      "scalability_score": 3,
+      "deployment_score": 2,
+      "quantum_score": 1
+    },
+    "evidence": {
+      "standardized": false,
+      "research_validated": true,
+      "deployment_evidence": "High",
+      "production_adoption": "Emerging",
+      "technology_readiness_level": 8,
+      "primary_reference": "Goldwasser, Micali and Rackoff - The Knowledge Complexity of Interactive Proof Systems (1985)"
+    },
+    "references": [
+      {
+        "title": "How to Explain Zero-Knowledge Protocols to Your Children",
+        "type": "Research Paper",
+        "identifier": "Goldwasser, Micali, Rackoff",
+        "year": "1989"
+      },
+      {
+        "title": "zk-SNARKs: Practical Zero-Knowledge Proofs",
+        "type": "Research",
+        "identifier": "zk-SNARK",
+        "year": "Various"
+      },
+      {
+        "title": "Zcash Protocol Specification",
+        "type": "Protocol",
+        "identifier": "Zcash",
+        "year": "Latest"
+      }
+    ]
+  }
+]

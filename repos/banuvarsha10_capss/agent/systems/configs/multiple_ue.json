@@ -1,0 +1,6 @@
+{
+    "experiment_name": "multiple_ue",
+    "ue_count": 20,
+    "duration": 60,
+    "startup_delay": 8
+}

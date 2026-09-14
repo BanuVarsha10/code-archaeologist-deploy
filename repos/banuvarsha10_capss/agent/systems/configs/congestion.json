@@ -1,0 +1,6 @@
+{
+    "experiment_name": "congestion",
+    "ue_count": 50,
+    "description": "Congestion Scenario",
+    "expected_load": "High"
+}

@@ -1,0 +1,29 @@
+01/15 08:12:34.123 [AMF] INFO: [UE-001] NGAP Initial UE Message received (Registration Request)
+01/15 08:12:34.124 [NAS] INFO: [UE-001] SUCI: suci-0-001-01-0000-0-0-0000000001, Registration Type: initial
+01/15 08:12:34.125 [AMF] INFO: [UE-001] Requested NSSAI: SST: 1 (eMBB)
+01/15 08:12:34.126 [SMF] INFO: [UE-001] Requested DNN: internet
+01/15 08:12:34.180 [AMF] INFO: [UE-001] Registration Accept sent
+
+01/15 10:05:11.450 [AMF] INFO: [UE-002] NGAP Initial UE Message received (Registration Request)
+01/15 10:05:11.451 [NAS] INFO: [UE-002] SUCI: suci-0-001-01-0000-0-0-0000000010, Registration Type: initial
+01/15 10:05:11.452 [AMF] INFO: [UE-002] Requested NSSAI: SST: 2 (URLLC)
+01/15 10:05:11.453 [SMF] INFO: [UE-002] Requested DNN: ims
+01/15 10:05:11.490 [AMF] INFO: [UE-002] Registration Accept sent
+
+01/15 12:00:00.001 [AMF] INFO: [UE-007] NGAP Initial UE Message received (Registration Request)
+01/15 12:00:00.002 [NAS] INFO: [UE-007] SUCI: suci-0-001-01-0000-0-0-0000000060, Registration Type: initial
+01/15 12:00:00.003 [AMF] INFO: [UE-007] Requested NSSAI: SST: 3 (mMTC)
+01/15 12:00:00.004 [SMF] INFO: [UE-007] Requested DNN: iot
+01/15 12:00:00.045 [AMF] INFO: [UE-007] Registration Accept sent
+
+01/15 14:45:12.780 [AMF] INFO: [UE-001] NGAP Uplink NAS Transport received (Mobility Registration Updating)
+01/15 14:45:12.781 [NAS] INFO: [UE-001] SUCI: suci-0-001-01-0000-0-0-0000000002, Registration Type: mobility
+01/15 14:45:12.782 [AMF] INFO: [UE-001] Requested NSSAI: SST: 1 (eMBB)
+01/15 14:45:12.783 [SMF] INFO: [UE-001] Requested DNN: internet
+01/15 14:45:12.820 [AMF] INFO: [UE-001] Registration Accept sent
+
+01/16 11:11:11.111 [AMF] INFO: [UE-006] NGAP Initial UE Message received (Registration Request)
+01/16 11:11:11.112 [NAS] INFO: [UE-006] SUCI: suci-0-001-01-0000-0-0-0000000050, Registration Type: initial
+01/16 11:11:11.113 [AMF] INFO: [UE-006] Requested NSSAI: SST: 1 (eMBB)
+01/16 11:11:11.114 [SMF] INFO: [UE-006] Requested DNN: internet
+01/16 11:11:11.150 [AMF] INFO: [UE-006] Registration Accept sent

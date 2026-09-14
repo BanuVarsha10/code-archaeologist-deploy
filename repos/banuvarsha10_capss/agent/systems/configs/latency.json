@@ -1,0 +1,6 @@
+{
+    "experiment_name": "latency",
+    "ue_count": 1,
+    "description": "Latency Measurement",
+    "expected_load": "Low"
+}

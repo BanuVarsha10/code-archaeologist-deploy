@@ -1,0 +1,6 @@
+{
+    "experiment_name": "roaming",
+    "ue_count": 1,
+    "description": "Roaming Registration",
+    "expected_load": "Low"
+}

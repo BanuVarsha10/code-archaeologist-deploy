@@ -1,0 +1,124 @@
+/* design-tokens.css
+ * One shared token set — colors, spacing, type, radius, shadow — consumed
+ * by every panel/component. No panel/component should hardcode a raw hex
+ * value; everything reads from these custom properties.
+ *
+ * Derived from the reference image: deep navy/near-black background, a
+ * bright mint/spring-green accent used deliberately (buttons, active
+ * states, key data points), a small dose of violet for secondary chart
+ * emphasis, rounded cards with a soft border/glow instead of hard shadows.
+ */
+
+:root {
+  /* --- Surfaces --- */
+  --bg-base: #0a0e14;
+  --bg-panel: #10151d;
+  --bg-panel-raised: #151b25;
+  --bg-hover: #1a212c;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 255, 255, 0.12);
+
+  /* --- Accent: green -> teal gradient --- */
+  --accent-green-start: #00ff9d;
+  --accent-green-end: #00c9a7;
+  --accent-gradient: linear-gradient(135deg, var(--accent-green-start), var(--accent-green-end));
+  --accent-green-dim: rgba(0, 255, 157, 0.16);
+  --accent-green-glow: rgba(0, 255, 157, 0.35);
+
+  /* --- Secondary accent: violet, used sparingly --- */
+  --accent-purple: #8b7cf6;
+  --accent-purple-dim: rgba(139, 124, 246, 0.16);
+
+  /* --- Hero / high-emphasis solid block (from the reference image) --- */
+  --hero-mint: #c9f7da;
+  --hero-mint-ink: #08251a;
+
+  /* --- Status --- */
+  --status-good: #00ff9d;
+  --status-warning: #ffb020;
+  --status-critical: #ff5470;
+  --status-neutral: #7a8699;
+
+  /* --- Text --- */
+  --text-primary: #f2f5f8;
+  --text-secondary: #a6b0bf;
+  --text-muted: #6b7686;
+  --text-on-accent: #04140f;
+
+  /* --- Type --- */
+  --font-heading: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* --- Spacing scale --- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  /* --- Radius --- */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+
+  /* --- Motion --- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-slow: 2000ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+code,
+.mono {
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: var(--accent-green-glow);
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--accent-green-glow);
+  }
+  50% {
+    box-shadow: 0 0 16px 4px var(--accent-green-glow);
+  }
+}
+
+.pulse-active {
+  animation: pulse-glow var(--duration-slow) var(--ease-standard) infinite;
+}

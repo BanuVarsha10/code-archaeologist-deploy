@@ -1,0 +1,6 @@
+{
+    "experiment_name": "single_ue",
+    "ue_count": 1,
+    "description": "Single UE Registration Experiment",
+    "expected_load": "Low"
+}

@@ -1,0 +1,8 @@
+httpx/
+repos/
+*.db
+repos.json
+uvicorn.log
+__pycache__/
+*.pyc
+.env

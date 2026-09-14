@@ -1,0 +1,62 @@
+# ============================================================
+# Secrets — never commit real credentials to this public repo
+# ============================================================
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+venv/
+.venv/
+
+# ============================================================
+# Node / frontend
+# ============================================================
+node_modules/
+dashboard_frontend/dist/
+**/.vite/
+
+# ============================================================
+# Generated experience / device-pool / run-result data — created
+# during real testing, may contain real IMSI/device identifiers.
+# ============================================================
+agent/dashboard_backend/dashboard_experience_store.json
+agent/dashboard_backend/dashboard_scaling_experience_store.json
+agent/dashboard_backend/device_pool.json
+agent/dashboard_backend/scripts/ablation_experience_store.json
+agent/demo_experience_store.json
+agent/experience_store.json
+agent/live_result.json
+agent/datasets/registration_dataset.csv
+*_experience_store.json
+*_experience*.json
+experience_store.json
+result.json
+
+# Batch/stress-test run output (regenerated every run)
+agent/dashboard_backend/scripts/stress_test_results/
+agent/dashboard_backend/scripts/ablation_study_results/
+
+# ============================================================
+# UERANSIM — this is its own separate git clone of the upstream
+# https://github.com/aligungr/UERANSIM project (confirmed: it has its
+# own .git with that remote), not part of this project's source. Without
+# this line, `git add -A` stages it as a broken, submodule-less gitlink
+# (no .gitmodules), which would clone as an empty directory for anyone
+# else. Clone it separately per the README instead.
+# ============================================================
+UERANSIM/
+
+# ============================================================
+# OS / editor junk
+# ============================================================
+*Zone.Identifier*
+.DS_Store
+Thumbs.db

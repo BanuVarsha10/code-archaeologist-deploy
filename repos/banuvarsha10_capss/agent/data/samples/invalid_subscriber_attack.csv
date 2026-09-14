@@ -1,0 +1,2 @@
+Request_ID,Experiment,Timestamp,UE_ID,Attack_Detected,Attack_Type,Decision,Severity,Confidence,Risk_Score,Reasons
+REQ000001,NORMAL,1900-07-16 13:30:32.579000,,True,INVALID_SUBSCRIBER,BLOCK,MALICIOUS,0.4,0.0,ue_id is empty. | dnn is empty. | snssai is empty. | Missing UE ID | Missing UE ID.

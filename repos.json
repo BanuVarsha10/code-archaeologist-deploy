@@ -1,0 +1,53 @@
+{
+  "encode_httpx": {
+    "status": "done",
+    "repo_url": "https://github.com/encode/httpx.git",
+    "db_path": "encode_httpx.db",
+    "processed": 450,
+    "total": 450,
+    "issues_fetched": 0,
+    "issues_cached": 223,
+    "issues_failed": 1
+  },
+  "banuvarsha10_fin-rag_genai": {
+    "status": "done",
+    "repo_url": "https://github.com/BanuVarsha10/Fin-rag_genai",
+    "db_path": "banuvarsha10_fin-rag_genai.db",
+    "processed": 3,
+    "total": 3,
+    "issues_fetched": 0,
+    "issues_cached": 0,
+    "issues_failed": 0
+  },
+  "pallets_click": {
+    "status": "done",
+    "repo_url": "https://github.com/pallets/click.git",
+    "db_path": "pallets_click.db",
+    "processed": 450,
+    "total": 450,
+    "issues_fetched": 0,
+    "issues_cached": 69,
+    "issues_failed": 0,
+    "error": "interrupted, retrying"
+  },
+  "banuvarsha10_capss": {
+    "status": "done",
+    "repo_url": "https://github.com/BanuVarsha10/CAPSS",
+    "db_path": "banuvarsha10_capss.db",
+    "processed": 2,
+    "total": 2,
+    "issues_fetched": 0,
+    "issues_cached": 0,
+    "issues_failed": 0
+  },
+  "banuvarsha10_code-archae": {
+    "status": "done",
+    "repo_url": "https://github.com/BanuVarsha10/code-archae",
+    "db_path": "banuvarsha10_code-archae.db",
+    "processed": 11,
+    "total": 11,
+    "issues_fetched": 0,
+    "issues_cached": 0,
+    "issues_failed": 0
+  }
+}
